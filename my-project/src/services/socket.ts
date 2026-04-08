@@ -7,10 +7,13 @@ export const connectSocket = (token: string) => {
     return socket;
   }
 
-  socket = io(import.meta.env.VITE_SOCKET_URL || "http://localhost:5000", {
+  socket = io(
+    import.meta.env.VITE_SOCKET_URL || "https://backend-2-ewjs.onrender.com",
+    {
     auth: { token },
     transports: ["websocket"]
-  });
+    }
+  );
 
   return socket;
 };
